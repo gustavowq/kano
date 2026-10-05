@@ -1,0 +1,22 @@
+ÁLBUM DO KANO - código-fonte
+
+Arquivos
+  index.html        a página inteira (HTML, CSS e JavaScript num arquivo só)
+  data/state.json   quais figurinhas têm foto e textos editados
+  photos/           as fotos coladas no álbum (d1a = dupla 1 foto A, g1 = galeria 1, rare = figurinha rara)
+
+Como abrir
+  Dê dois cliques em index.html. Precisa de internet para carregar as fontes
+  e as bibliotecas de animação (GSAP, ScrollTrigger, Lenis e canvas-confetti).
+
+  Para hospedar (GitHub Pages, Netlify, Vercel etc.), envie a pasta inteira
+  mantendo a mesma estrutura.
+
+Trocar uma foto
+  Substitua o arquivo em photos/ mantendo o mesmo nome (ex.: photos/g1.jpg).
+  Para um espaço vazio virar foto, adicione o nome dele em data/state.json
+  e no bloco window.__ALBUM_STATE__ no final do index.html.
+
+Observação
+  O botão "Editar álbum" só funciona dentro do Claude. Fora dele a página
+  fica só para visualização.

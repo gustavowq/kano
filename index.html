@@ -1,0 +1,895 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Álbum do Kano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Caveat:wght@500;700&family=Figtree:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: um álbum de figurinhas. Capa azul-marinho, páginas claras com uma figurinha por dupla, página rara holográfica, carta em folha de caderno, final com bolo. Visual único (não troca com o tema). */
+:root{
+  --cover:#101B45; --cover-2:#1B2B66;
+  --page:#F2F5FF; --page-dot:#D5DDF5;
+  --ink:#121633; --muted:#545E84;
+  --sun:#FFC93C; --flare:#FF5B3A; --pitch:#17B26A; --sky:#5B8CFF;
+  --white:#FFFFFF; --line:#BFD0F5; --margin:#FF8A8A;
+  --f-display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-hand:"Caveat","Comic Sans MS",cursive;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --gutter:max(16px,4.5vw);
+  --shadow-sticker:0 1px 0 rgba(18,22,51,.08),0 10px 24px -8px rgba(18,22,51,.35);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:var(--cover);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:.95;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+
+/* ---------- CAPA ---------- */
+.hero{position:relative;background:radial-gradient(120% 90% at 80% 0%,var(--cover-2) 0%,var(--cover) 60%);color:var(--white);padding-block:clamp(28px,5vw,48px) clamp(80px,12vw,140px);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 2px,transparent 2px 22px);z-index:-1}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-bottom:clamp(40px,8vw,90px);border-bottom:2px dashed rgba(255,255,255,.18)}
+.seal{display:inline-flex;align-items:center;gap:10px;color:var(--sun)}
+.seal b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sun);color:var(--cover);font-family:var(--f-display);font-size:15px}
+.hero-top .eyebrow{color:rgba(255,255,255,.7)}
+.hero-body{position:relative;padding-top:clamp(36px,6vw,64px)}
+.hero h1{font-size:clamp(44px,9vw,112px);letter-spacing:-.01em}
+.hero h1 .l1{display:block;color:var(--white)}
+.hero h1 .name{display:flex;gap:.02em;color:var(--sun);font-size:clamp(84px,21vw,270px);line-height:.82;margin-top:.04em;text-shadow:0 .04em 0 var(--flare)}
+.hero h1 .ch{display:inline-block;transform-origin:50% 100%}
+.hero-sub{max-width:34ch;margin-top:clamp(20px,3vw,30px);font-size:clamp(18px,2.2vw,22px);color:rgba(255,255,255,.86)}
+.hero-cta{margin-top:30px;display:inline-flex;align-items:center;gap:12px;background:var(--sun);color:var(--cover);border:0;border-radius:999px;padding:14px 22px 14px 26px;font-weight:800;font-size:16px;box-shadow:0 6px 0 #C9951A;transition:transform .15s ease,box-shadow .15s ease}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 0 #C9951A}
+.hero-cta:active{transform:translateY(4px);box-shadow:0 2px 0 #C9951A}
+.hero-cta svg{width:18px;height:18px}
+.floaters{position:absolute;inset:0;pointer-events:none;z-index:-1}
+.floater{position:absolute;width:clamp(54px,7vw,92px);aspect-ratio:3/4;border-radius:10px;background:var(--white);box-shadow:var(--shadow-sticker);display:grid;place-items:center;font-family:var(--f-display);color:var(--cover);font-size:clamp(18px,2.4vw,30px);border:4px solid var(--white);outline:2px dashed var(--page-dot);outline-offset:-10px}
+.floater.f1{top:6%;right:8%;background:var(--flare);color:var(--white);rotate:12deg}
+.floater.f2{top:40%;right:22%;background:var(--pitch);color:var(--white);rotate:-9deg}
+.floater.f3{bottom:-2%;right:4%;background:var(--sky);color:var(--white);rotate:6deg}
+.floater.f4{top:2%;right:34%;rotate:-14deg}
+.floater.f5{bottom:12%;right:38%;background:var(--sun);rotate:16deg}
+@media (max-width:720px){.floater.f2,.floater.f4,.floater.f5{display:none}.floater.f1{top:2%}.floater.f3{bottom:4%}}
+
+/* faixa */
+.ribbon-wrap{overflow:hidden;margin-top:-54px;padding-block:20px;position:relative;z-index:2;background:linear-gradient(var(--cover) 50%,var(--page) 50%)}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.ribbon{background:var(--flare);color:var(--white);transform:rotate(-2deg);margin-inline:-20px;position:relative;overflow:hidden;border-block:3px solid var(--ink);box-shadow:0 8px 0 rgba(18,22,51,.25)}
+.ribbon-track{display:flex;width:max-content;animation:marq 26s linear infinite}
+.ribbon span{font-family:var(--f-display);font-size:clamp(18px,2.6vw,28px);white-space:nowrap;padding:14px 0}
+.ribbon span i{font-style:normal;color:var(--sun);margin-inline:.8em}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ---------- PÁGINAS ---------- */
+.page{background-color:var(--page);background-image:radial-gradient(var(--page-dot) 1.2px,transparent 1.2px);background-size:22px 22px;position:relative}
+.intro{padding-block:clamp(90px,12vw,150px) clamp(40px,6vw,70px)}
+.intro .wrap{display:grid;gap:22px;max-width:900px}
+.intro .eyebrow{color:var(--flare)}
+.intro h2{font-size:clamp(40px,6.4vw,78px);color:var(--cover)}
+.intro p{font-size:clamp(18px,2vw,21px);color:var(--muted);max-width:56ch}
+.progress{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px}
+.progress-bar{flex:1 1 220px;max-width:340px;height:12px;border-radius:99px;background:var(--white);border:2px solid var(--cover);overflow:hidden}
+.progress-bar i{display:block;height:100%;width:0;background:var(--pitch);transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.progress-label{font-family:var(--f-mono);font-size:13px;font-weight:700;color:var(--cover);font-variant-numeric:tabular-nums}
+
+/* duplas */
+.duo{position:relative;padding-block:clamp(70px,10vw,130px);overflow:hidden}
+.duo + .duo{border-top:2px dashed var(--page-dot)}
+.duo .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,90px);align-items:center;position:relative}
+.duo.flip .duo-media{order:2}
+.duo-num{position:absolute;top:50%;font-family:var(--f-display);font-size:clamp(180px,30vw,420px);line-height:1;color:transparent;-webkit-text-stroke:2px var(--page-dot);pointer-events:none;user-select:none;translate:0 -50%;z-index:0}
+.duo .duo-num{right:-2%}
+.duo.flip .duo-num{left:-2%;right:auto}
+.duo-media{position:relative;min-height:clamp(380px,46vw,560px);z-index:1}
+.duo-copy{position:relative;z-index:1;display:grid;gap:18px;min-width:0}
+.duo-copy .eyebrow{color:var(--accent)}
+.duo-copy h2{font-size:clamp(46px,6.6vw,86px);color:var(--cover)}
+.duo-copy h2 .amp{color:var(--accent);font-family:var(--f-hand);font-weight:700;font-size:1.05em;margin-inline:.06em;display:inline-block;transform:translateY(.06em)}
+.lede{font-size:clamp(18px,1.9vw,20px);max-width:44ch}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;margin:6px 0 0;background:var(--cover);border:2px solid var(--cover);border-radius:14px;overflow:hidden}
+.stats div{background:var(--white);padding:12px 14px;min-width:0}
+.stats dt{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.stats dd{margin:4px 0 0;font-weight:700;font-size:15px;line-height:1.3;color:var(--ink)}
+.us{font-family:var(--f-hand);font-size:clamp(24px,2.6vw,29px);line-height:1.2;color:var(--cover);max-width:30ch;padding-left:18px;border-left:4px solid var(--accent)}
+.us b{color:var(--accent);font-weight:700}
+.search-link{display:none;font-size:14px;font-weight:700;color:var(--cover);text-decoration:underline;text-underline-offset:3px;width:max-content}
+body.editing .search-link{display:inline-block}
+.d1{--accent:#2F5BEA}.d2{--accent:#C4183C}.d3{--accent:#F07A12}.d4{--accent:#17A05F}
+@media (max-width:860px){
+  .duo .wrap{grid-template-columns:minmax(0,1fr)}
+  .duo.flip .duo-media{order:0}
+  .stats{grid-template-columns:minmax(0,1fr)}
+  .duo-num{top:8%;translate:0 0}
+}
+
+/* figurinhas / slots */
+.slot{position:absolute;margin:0;--tilt:0deg}
+.slot .inner{position:relative;width:100%;height:100%;background:var(--white);padding:10px 10px 44px;border-radius:16px;box-shadow:var(--shadow-sticker);transition:transform .35s cubic-bezier(.2,.9,.3,1.3),box-shadow .35s ease}
+.slot:hover .inner{transform:translateY(-8px) rotate(calc(var(--tilt) * -0.4));box-shadow:0 2px 0 rgba(18,22,51,.08),0 26px 40px -14px rgba(18,22,51,.45)}
+.slot .frame{position:relative;width:100%;height:100%;border-radius:9px;overflow:hidden;background:var(--page)}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.slot .gloss{position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(255,255,255,.18) 100%);pointer-events:none}
+.slot figcaption{position:absolute;left:14px;right:14px;bottom:10px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13px;font-weight:700;color:var(--ink)}
+.slot figcaption .no{font-family:var(--f-mono);font-size:11px;color:var(--muted);flex:none}
+.slot figcaption .cap{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.empty{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:10px;text-align:center;padding:16px;border:3px dashed var(--line);border-radius:9px;color:var(--muted);background:repeating-linear-gradient(-45deg,transparent 0 12px,rgba(91,140,255,.06) 12px 24px)}
+.empty svg{width:clamp(38px,5vw,58px);height:auto;color:var(--accent,var(--sky))}
+.empty strong{font-family:var(--f-display);font-weight:400;font-size:clamp(15px,1.6vw,19px);letter-spacing:.04em;color:var(--cover)}
+.empty small{font-size:12.5px;line-height:1.35;max-width:22ch}
+.slot.filled .empty{display:none}
+.slot:not(.filled) img{display:none}
+.edit-hit{position:absolute;inset:0;display:none;align-items:center;justify-content:center;flex-direction:column;gap:8px;background:rgba(16,27,69,.55);border:0;color:var(--white);font-weight:800;font-size:15px;border-radius:9px;backdrop-filter:blur(2px)}
+.edit-hit span.small{font-weight:500;font-size:12.5px;opacity:.85}
+body.editing .edit-hit{display:flex}
+.rm{position:absolute;top:-10px;right:-10px;z-index:3;display:none;width:34px;height:34px;border-radius:50%;border:3px solid var(--white);background:var(--flare);color:var(--white);font-weight:800;line-height:1;box-shadow:var(--shadow-sticker)}
+body.editing .slot.filled .rm{display:grid;place-items:center}
+.pending .inner{outline:3px solid var(--sun);outline-offset:3px}
+
+.main{width:min(78%,420px);aspect-ratio:4/5;left:0;top:0}
+.mini{width:min(46%,250px);aspect-ratio:1/1;right:0;bottom:0}
+.duo.flip .main{left:auto;right:0}
+.duo.flip .mini{right:auto;left:0}
+@media (max-width:860px){.main{width:min(74%,380px)}.mini{width:min(44%,220px)}}
+@media (max-width:480px){.duo-media{min-height:clamp(340px,110vw,460px)}.slot .inner{padding:7px 7px 36px}.slot figcaption{bottom:7px;font-size:12px;left:10px;right:10px}}
+
+/* ---------- RARA ---------- */
+.rare{background:var(--cover);color:var(--white);padding-block:clamp(90px,12vw,150px);overflow:hidden;position:relative}
+.rare::before{content:"";position:absolute;inset:-20%;background:conic-gradient(from 90deg at 70% 50%,rgba(255,201,60,.12),rgba(91,140,255,.14),rgba(255,91,58,.12),rgba(23,178,106,.12),rgba(255,201,60,.12));filter:blur(60px);pointer-events:none}
+.rare .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(40px,7vw,100px);align-items:center}
+.rare .eyebrow{color:var(--sun)}
+.rare h2{font-size:clamp(44px,6.4vw,84px);margin-top:16px}
+.rare h2 em{font-style:normal;color:var(--sun)}
+.rare-text{display:grid;gap:20px;min-width:0}
+.rare-text p{font-size:clamp(18px,2vw,21px);color:rgba(255,255,255,.82);max-width:42ch}
+.rare-facts{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--f-mono);font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:8px 12px;border-radius:99px;border:2px solid rgba(255,255,255,.25);color:var(--white)}
+.chip b{color:var(--sun);font-weight:700}
+.card-stage{perspective:1100px;display:grid;place-items:center}
+.rare-card{--rx:0deg;--ry:0deg;--mx:50%;--my:50%;position:relative;width:min(100%,400px);aspect-ratio:5/7;border-radius:22px;padding:14px;background:linear-gradient(145deg,#FFE58A,var(--sun) 35%,#F2A91C 70%,#FFE58A);transform:rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;transition:transform .2s ease-out;box-shadow:0 40px 80px -30px rgba(0,0,0,.65),0 0 0 2px rgba(255,255,255,.25) inset}
+.rare-card .slot{position:relative;width:100%;height:calc(100% - 92px);--accent:var(--flare)}
+.rare-card .slot .inner{padding:0;border-radius:12px;box-shadow:none;background:var(--cover)}
+.rare-card .slot:hover .inner{transform:none;box-shadow:none}
+.rare-card .slot .frame{border-radius:12px;background:var(--cover-2)}
+.rare-card .empty{border-color:rgba(255,255,255,.3);color:rgba(255,255,255,.75);background:repeating-linear-gradient(-45deg,transparent 0 12px,rgba(255,255,255,.04) 12px 24px)}
+.rare-card .empty strong{color:var(--white)}
+.rare-card .empty svg{color:var(--sun)}
+.rare-foot{height:92px;display:flex;flex-direction:column;justify-content:center;gap:4px;color:var(--cover);padding-inline:6px}
+.rare-foot .nm{font-family:var(--f-display);font-size:clamp(22px,2.6vw,28px);line-height:1}
+.rare-foot .meta{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.holo{position:absolute;inset:0;border-radius:22px;pointer-events:none;mix-blend-mode:color-dodge;opacity:.55;background:radial-gradient(circle at var(--mx) var(--my),rgba(255,255,255,.75),transparent 40%),linear-gradient(115deg,transparent 15%,rgba(255,0,170,.35) 30%,rgba(0,220,255,.35) 45%,rgba(255,230,0,.35) 60%,transparent 80%);background-size:100% 100%,220% 220%;background-position:center,var(--mx) var(--my)}
+.rare-badge{position:absolute;top:-16px;right:-16px;z-index:4;width:78px;height:78px;border-radius:50%;background:var(--flare);color:var(--white);display:grid;place-items:center;text-align:center;font-family:var(--f-display);font-size:13px;line-height:1;transform:translateZ(40px) rotate(14deg);box-shadow:0 8px 20px rgba(0,0,0,.35);border:3px solid var(--white)}
+@media (max-width:860px){.rare .wrap{grid-template-columns:minmax(0,1fr)}.card-stage{order:-1}}
+
+/* ---------- GALERIA ---------- */
+.gallery{padding-block:clamp(90px,12vw,150px)}
+.gallery-head{display:grid;gap:16px;max-width:760px;margin-bottom:clamp(50px,7vw,90px)}
+.gallery-head .eyebrow{color:var(--pitch)}
+.gallery-head h2{font-size:clamp(40px,6vw,76px);color:var(--cover)}
+.gallery-head p{font-size:clamp(17px,1.9vw,20px);color:var(--muted);max-width:52ch}
+.board{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(22px,3.4vw,44px) clamp(16px,2.6vw,32px);align-items:start}
+.board .slot{position:relative}
+.g1{grid-column:1/span 5;aspect-ratio:4/5;--tilt:-4deg;--accent:var(--sky)}
+.g2{grid-column:7/span 6;aspect-ratio:4/3;--tilt:3deg;margin-top:60px;--accent:var(--flare)}
+.g3{grid-column:2/span 4;aspect-ratio:1/1;--tilt:5deg;--accent:var(--pitch)}
+.g4{grid-column:7/span 5;aspect-ratio:4/5;--tilt:-3deg;margin-top:-80px;--accent:var(--sun)}
+.board .slot figcaption .cap{white-space:normal;outline:none}
+.board .slot .inner{padding-bottom:40px}
+.board .slot figcaption{justify-content:flex-end;bottom:12px}
+@media (max-width:720px){
+  .board{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .board .slot{grid-column:auto/span 1!important;margin-top:0!important;aspect-ratio:3/4!important}
+  .board .slot:nth-child(even){margin-top:36px!important}
+  .board .slot .inner{padding-bottom:34px}
+}
+
+/* ---------- CARTA ---------- */
+.letter-sec{padding-block:clamp(40px,6vw,70px) clamp(100px,13vw,160px)}
+.letter{position:relative;max-width:760px;margin-inline:auto;background-color:var(--white);background-image:linear-gradient(90deg,transparent 58px,var(--margin) 58px,var(--margin) 60px,transparent 60px),repeating-linear-gradient(to bottom,transparent 0 39px,var(--line) 39px 40px);background-position:0 18px;border-radius:6px;padding:62px clamp(22px,5vw,60px) 50px 84px;box-shadow:0 30px 60px -30px rgba(18,22,51,.45);rotate:-1deg;font-family:var(--f-hand);font-size:clamp(25px,2.8vw,30px);line-height:40px;color:#1E2B6B}
+.letter::before{content:"";position:absolute;left:18px;top:30px;bottom:30px;width:16px;background:radial-gradient(circle,var(--page) 6px,transparent 7px) 0 0/16px 54px repeat-y}
+.letter .tape{position:absolute;top:-16px;left:50%;width:140px;height:34px;translate:-50% 0;rotate:3deg;background:rgba(255,201,60,.75);box-shadow:0 2px 4px rgba(0,0,0,.08)}
+.letter .greet{font-weight:700;font-size:1.25em}
+.letter .body{white-space:pre-line;margin-top:40px;outline:none}
+.letter .sign{margin-top:40px;text-align:right;font-weight:700;font-size:1.3em;outline:none}
+@media (max-width:560px){.letter{padding-left:56px;background-image:linear-gradient(90deg,transparent 40px,var(--margin) 40px,var(--margin) 42px,transparent 42px),repeating-linear-gradient(to bottom,transparent 0 35px,var(--line) 35px 36px);line-height:36px;font-size:23px}.letter::before{left:10px;width:14px}.letter .body,.letter .sign{margin-top:36px}}
+body.editing [data-edit]{outline:2px dashed var(--sky)!important;outline-offset:4px;border-radius:4px;cursor:text}
+
+/* ---------- FINAL ---------- */
+.finale{background:var(--sun);color:var(--cover);padding-block:clamp(90px,12vw,150px) clamp(110px,14vw,170px);text-align:center;position:relative;overflow:hidden}
+.finale .wrap{display:grid;justify-items:center;gap:26px}
+.finale .eyebrow{color:var(--cover)}
+.finale h2{font-size:clamp(42px,11vw,150px)}
+.finale p{font-size:clamp(18px,2vw,21px);max-width:44ch}
+.cake{position:relative;width:220px;height:170px;margin-top:10px}
+.cake .tier{position:absolute;left:50%;translate:-50% 0;border-radius:12px 12px 8px 8px;border:3px solid var(--cover)}
+.cake .t1{bottom:0;width:220px;height:74px;background:var(--flare)}
+.cake .t2{bottom:71px;width:160px;height:56px;background:var(--white)}
+.cake .t1::after{content:"";position:absolute;inset:14px 0 auto;height:12px;background:repeating-linear-gradient(90deg,var(--white) 0 14px,transparent 14px 28px)}
+.cake .t2::after{content:"";position:absolute;inset:auto 0 10px;height:10px;background:repeating-linear-gradient(90deg,var(--sky) 0 10px,var(--pitch) 10px 20px,var(--sun) 20px 30px)}
+.candles{position:absolute;bottom:124px;left:50%;translate:-50% 0;display:flex;gap:22px}
+.candle{position:relative;width:12px;height:40px;border:2px solid var(--cover);border-radius:3px;background:repeating-linear-gradient(-45deg,var(--white) 0 6px,var(--sky) 6px 12px)}
+.flame{position:absolute;left:50%;bottom:100%;width:14px;height:22px;translate:-50% -2px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#FFF6C8 0 25%,#FFB020 55%,var(--flare) 100%);transform-origin:50% 100%;animation:flick .18s ease-in-out infinite alternate}
+@keyframes flick{to{transform:scale(.92,1.08) rotate(3deg)}}
+.blown .flame{animation:none;transform:scale(0);transition:transform .35s ease}
+.smoke{position:absolute;left:50%;bottom:100%;width:6px;height:6px;border-radius:50%;background:rgba(18,22,51,.25);opacity:0}
+.blown .smoke{animation:smoke 1.4s ease-out forwards}
+@keyframes smoke{0%{opacity:.7;transform:translate(-50%,0) scale(1)}100%{opacity:0;transform:translate(-30%,-60px) scale(5)}}
+.blow{display:inline-flex;align-items:center;gap:10px;background:var(--cover);color:var(--white);border:0;border-radius:999px;padding:16px 28px;font-weight:800;font-size:17px;box-shadow:0 6px 0 #050B24;transition:transform .15s,box-shadow .15s}
+.blow:hover{transform:translateY(-2px);box-shadow:0 8px 0 #050B24}
+.blow:active{transform:translateY(4px);box-shadow:0 2px 0 #050B24}
+.wish{font-family:var(--f-hand);font-size:clamp(26px,3vw,34px);font-weight:700;min-height:1.3em}
+.foot{background:var(--cover);color:rgba(255,255,255,.6);padding-block:26px;font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.foot .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* ---------- EDIÇÃO ---------- */
+.editbar{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));translate:-50% 0;z-index:50;display:flex;align-items:center;gap:10px;padding:8px;border-radius:999px;background:var(--ink);color:var(--white);box-shadow:0 16px 40px -10px rgba(0,0,0,.5);max-width:calc(100vw - 32px)}
+.editbar button{border:0;border-radius:999px;padding:10px 16px;font-weight:800;font-size:14px;white-space:nowrap}
+.btn-edit{background:var(--sun);color:var(--cover)}
+.btn-save{background:var(--pitch);color:var(--white)}
+.btn-save:disabled{opacity:.45;cursor:not-allowed}
+.btn-cancel{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.3)!important}
+.editbar .hint{font-size:13px;padding-inline:8px;color:rgba(255,255,255,.75);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media (max-width:560px){.editbar .hint{display:none}}
+.toast{position:fixed;left:50%;top:calc(16px + env(safe-area-inset-top,0px));translate:-50% -140%;z-index:60;background:var(--ink);color:var(--white);padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px;box-shadow:0 12px 30px -8px rgba(0,0,0,.4);transition:translate .35s cubic-bezier(.2,.9,.3,1.2);max-width:calc(100vw - 32px)}
+.toast.show{translate:-50% 0}
+
+@media (prefers-reduced-motion:reduce){
+  .ribbon-track,.flame{animation:none}
+  .slot .inner,.rare-card{transition:none}
+}
+</style>
+
+<div id="app">
+<!-- CAPA -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top">
+      <span class="seal"><b>★</b><span class="eyebrow" style="color:var(--sun)">Álbum oficial</span></span>
+      <span class="eyebrow">Edição de aniversário · 2026</span>
+    </div>
+    <div class="hero-body">
+      <h1 aria-label="Parabéns, Kano">
+        <span class="l1" aria-hidden="true">Parabéns,</span>
+        <span class="name" aria-hidden="true"><span class="ch">K</span><span class="ch">A</span><span class="ch">N</span><span class="ch">O</span></span>
+      </h1>
+      <p class="hero-sub">As maiores duplas da história num álbum só. E a última página guardada pra figurinha mais rara de todas: a nossa.</p>
+      <button class="hero-cta" id="openAlbum" type="button">Abrir o álbum
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="floaters" aria-hidden="true">
+    <div class="floater f1">01</div><div class="floater f2">02</div><div class="floater f3">03</div><div class="floater f4">05</div><div class="floater f5">★</div>
+  </div>
+</header>
+
+<div class="ribbon-wrap" aria-hidden="true"><div class="ribbon">
+  <div class="ribbon-track">
+    <span>HARVEY &amp; MIKE<i>★</i>NEYMAR &amp; MESSI<i>★</i>KENAN &amp; KEL<i>★</i>WILL &amp; CARLTON<i>★</i>KANO &amp; GUSTAVO<i>★</i></span>
+    <span>HARVEY &amp; MIKE<i>★</i>NEYMAR &amp; MESSI<i>★</i>KENAN &amp; KEL<i>★</i>WILL &amp; CARLTON<i>★</i>KANO &amp; GUSTAVO<i>★</i></span>
+  </div>
+</div></div>
+
+<main class="page" id="album">
+  <section class="intro">
+    <div class="wrap">
+      <p class="eyebrow">Página 1 · Apresentação</p>
+      <h2>Tem dupla que entra pra história.</h2>
+      <p>Umas no tribunal, outras no Camp Nou, algumas na TV da tarde. Cada página deste álbum traz uma delas. Folheia com calma, porque a última figurinha foi a mais difícil de conseguir.</p>
+      <div class="progress" aria-live="polite">
+        <div class="progress-bar" aria-hidden="true"><i id="progFill"></i></div>
+        <span class="progress-label" id="progLabel">0 de 13 figurinhas coladas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 -->
+  <section class="duo d1">
+    <div class="duo-num" aria-hidden="true">01</div>
+    <div class="wrap">
+      <div class="duo-media">
+        <figure class="slot main" data-slot="d1a" data-tilt="-4">
+          <div class="inner"><div class="frame">
+            <img alt="Harvey Specter e Mike Ross">
+            <div class="empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="20" width="52" height="34" rx="5"/><path d="M23 20v-6a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v6M6 34h52"/><rect x="28" y="30" width="8" height="8" rx="1.5"/></svg><strong>COLE AQUI</strong><small>Harvey e Mike, de terno, prontos pro tribunal</small></div>
+            <div class="gloss"></div>
+            <button class="edit-hit" type="button">Colar foto<span class="small">JPG ou PNG</span></button>
+          </div><figcaption><span class="cap">Harvey &amp; Mike</span><span class="no">Nº 01-A</span></figcaption></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+        <figure class="slot mini" data-slot="d1b" data-tilt="7">
+          <div class="inner"><div class="frame">
+            <img alt="Cena de Suits">
+            <div class="empty"><strong>COLE AQUI</strong><small>Uma cena favorita</small></div>
+            <div class="gloss"></div>
+            <button class="edit-hit" type="button">Colar foto</button>
+          </div><figcaption><span class="cap">Suits</span><span class="no">Nº 01-B</span></figcaption></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+      </div>
+      <div class="duo-copy">
+        <p class="eyebrow">Figurinha 01 · Suits</p>
+        <h2>Harvey <span class="amp">&amp;</span> Mike</h2>
+        <p class="lede">Harvey apostou no Mike quando ninguém mais apostaria. Daí em diante, um segurou a barra do outro em cada caso impossível.</p>
+        <dl class="stats">
+          <div><dt>Onde</dt><dd>Pearson Hardman, Nova York</dd></div>
+          <div><dt>Quando</dt><dd>2011 a 2019</dd></div>
+          <div><dt>Regra da dupla</dt><dd>Ninguém fica pra trás</dd></div>
+        </dl>
+        <p class="us"><b>Que nem a gente:</b> cada um sabe quando o outro precisa de apoio, e aparece sem precisar pedir.</p>
+        <a class="search-link" href="https://www.google.com/search?tbm=isch&amp;q=Harvey+Specter+Mike+Ross" target="_blank" rel="noopener">Buscar fotos dessa dupla ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 -->
+  <section class="duo d2 flip">
+    <div class="duo-num" aria-hidden="true">02</div>
+    <div class="wrap">
+      <div class="duo-media">
+        <figure class="slot main" data-slot="d2a" data-tilt="4">
+          <div class="inner"><div class="frame">
+            <img alt="Neymar e Messi">
+            <div class="empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><circle cx="32" cy="32" r="25"/><path d="M32 21l9 6.5-3.4 10.5H26.4L23 27.5z"/><path d="M32 21V8M41 27.5l12-4M37.6 38l7.6 10M26.4 38l-7.6 10M23 27.5l-12-4"/></svg><strong>COLE AQUI</strong><small>Neymar e Messi comemorando um gol juntos</small></div>
+            <div class="gloss"></div>
+            <button class="edit-hit" type="button">Colar foto<span class="small">JPG ou PNG</span></button>
+          </div><figcaption><span class="cap">Neymar &amp; Messi</span><span class="no">Nº 02-A</span></figcaption></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+        <figure class="slot mini" data-slot="d2b" data-tilt="-8">
+          <div class="inner"><div class="frame">
+            <img alt="Barcelona">
+            <div class="empty"><strong>COLE AQUI</strong><small>Uma resenha no vestiário</small></div>
+            <div class="gloss"></div>
+            <button class="edit-hit" type="button">Colar foto</button>
+          </div><figcaption><span class="cap">Camp Nou</span><span class="no">Nº 02-B</span></figcaption></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+      </div>
+      <div class="duo-copy">
+        <p class="eyebrow">Figurinha 02 · Barcelona</p>
+        <h2>Neymar <span class="amp">&amp;</span> Messi</h2>
+        <p class="lede">Um brasileiro e um argentino no mesmo ataque, rindo juntos no meio do jogo. Se Brasil e Argentina viram parceria, amizade de verdade aguenta qualquer coisa.</p>
+        <dl class="stats">
+          <div><dt>Onde</dt><dd>Camp Nou, Barcelona</dd></div>
+          <div><dt>Quando</dt><dd>2013 a 2017</dd></div>
+          <div><dt>Jogada</dt><dd>Tabela de olhos fechados</dd></div>
+        </dl>
+        <p class="us"><b>Que nem a gente:</b> um lança e o outro já sabe onde a bola vai cair.</p>
+        <a class="search-link" href="https://www.google.com/search?tbm=isch&amp;q=Neymar+Messi+Barcelona" target="_blank" rel="noopener">Buscar fotos dessa dupla ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 -->
+  <section class="duo d3">
+    <div class="duo-num" aria-hidden="true">03</div>
+    <div class="wrap">
+      <div class="duo-media">
+        <figure class="slot main" data-slot="d3a" data-tilt="-3">
+          <div class="inner"><div class="frame">
+            <img alt="Kenan e Kel">
+            <div class="empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><path d="M27 6h10v8c0 3 6 6 6 13v28a3 3 0 0 1-3 3H24a3 3 0 0 1-3-3V27c0-7 6-10 6-13z"/><path d="M21 32h22v14H21z"/></svg><strong>COLE AQUI</strong><small>Kenan e Kel no meio de mais um plano furado</small></div>
+            <div class="gloss"></div>
+            <button class="edit-hit" type="button">Colar foto<span class="small">JPG ou PNG</span></button>
+          </div><figcaption><span class="cap">Kenan &amp; Kel</span><span class="no">Nº 03-A</span></figcaption></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+        <figure class="slot mini" data-slot="d3b" data-tilt="9">
+          <div class="inner"><div class="frame">
+            <img alt="Refrigerante de laranja">
+            <div class="empty"><strong>COLE AQUI</strong><small>O refrigerante de laranja</small></div>
+            <div class="gloss"></div>
+            <button class="edit-hit" type="button">Colar foto</button>
+          </div><figcaption><span class="cap">Laranja!</span><span class="no">Nº 03-B</span></figcaption></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+      </div>
+      <div class="duo-copy">
+        <p class="eyebrow">Figurinha 03 · Nickelodeon</p>
+        <h2>Kenan <span class="amp">&amp;</span> Kel</h2>
+        <p class="lede">Um bola o plano genial, o outro aparece no meio com uma garrafa de refrigerante de laranja. Quase sempre dá errado, e é exatamente por isso que é tão bom.</p>
+        <dl class="stats">
+          <div><dt>Onde</dt><dd>Chicago, na TV da tarde</dd></div>
+          <div><dt>Quando</dt><dd>1996 a 2000</dd></div>
+          <div><dt>Combustível</dt><dd>Refrigerante de laranja</dd></div>
+        </dl>
+        <p class="us"><b>Que nem a gente:</b> os piores planos viraram as melhores histórias.</p>
+        <a class="search-link" href="https://www.google.com/search?tbm=isch&amp;q=Kenan+e+Kel" target="_blank" rel="noopener">Buscar fotos dessa dupla ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 -->
+  <section class="duo d4 flip">
+    <div class="duo-num" aria-hidden="true">04</div>
+    <div class="wrap">
+      <div class="duo-media">
+        <figure class="slot main" data-slot="d4a" data-tilt="3">
+          <div class="inner"><div class="frame">
+            <img alt="Will e Carlton">
+            <div class="empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="25"/><path d="M7 32h50M32 7v50M14 14c8 8 8 28 0 36M50 14c-8 8-8 28 0 36"/></svg><strong>COLE AQUI</strong><small>Will e Carlton na mansão de Bel-Air</small></div>
+            <div class="gloss"></div>
+            <button class="edit-hit" type="button">Colar foto<span class="small">JPG ou PNG</span></button>
+          </div><figcaption><span class="cap">Will &amp; Carlton</span><span class="no">Nº 04-A</span></figcaption></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+        <figure class="slot mini" data-slot="d4b" data-tilt="-7">
+          <div class="inner"><div class="frame">
+            <img alt="A dança do Carlton">
+            <div class="empty"><strong>COLE AQUI</strong><small>A dança do Carlton</small></div>
+            <div class="gloss"></div>
+            <button class="edit-hit" type="button">Colar foto</button>
+          </div><figcaption><span class="cap">A dança</span><span class="no">Nº 04-B</span></figcaption></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+      </div>
+      <div class="duo-copy">
+        <p class="eyebrow">Figurinha 04 · Um Maluco no Pedaço</p>
+        <h2>Will <span class="amp">&amp;</span> Carlton</h2>
+        <p class="lede">Um chegou da Filadélfia, o outro nunca tinha saído de Bel-Air. Não tinham nada em comum, até o dia em que viraram irmãos.</p>
+        <dl class="stats">
+          <div><dt>Onde</dt><dd>Bel-Air, Califórnia</dd></div>
+          <div><dt>Quando</dt><dd>1990 a 1996</dd></div>
+          <div><dt>Marca registrada</dt><dd>A dança do Carlton</dd></div>
+        </dl>
+        <p class="us"><b>Que nem a gente:</b> não precisa ser do mesmo sangue pra ser irmão.</p>
+        <a class="search-link" href="https://www.google.com/search?tbm=isch&amp;q=Will+Smith+Carlton+Banks+Um+Maluco+no+Peda%C3%A7o" target="_blank" rel="noopener">Buscar fotos dessa dupla ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- RARA -->
+<section class="rare" id="rara">
+  <div class="wrap">
+    <div class="rare-text">
+      <p class="eyebrow">Figurinha 05 · Brilhante</p>
+      <h2>A dupla mais difícil de <em>completar</em>.</h2>
+      <p>Essa não vem em pacotinho de banca. Saiu de anos de escola, de zoeira no intervalo, de conversa até tarde e de aparecer quando importava.</p>
+      <div class="rare-facts">
+        <span class="chip">Unidades no mundo: <b>1</b></span>
+        <span class="chip">Raridade: <b>lendária</b></span>
+        <span class="chip">Status: <b>irmãos</b></span>
+      </div>
+    </div>
+    <div class="card-stage">
+      <div class="rare-card" id="rareCard">
+        <div class="rare-badge">EDIÇÃO<br>ÚNICA</div>
+        <figure class="slot" data-slot="rare">
+          <div class="inner"><div class="frame">
+            <img alt="Kano e Gustavo">
+            <div class="empty"><svg viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="M32 4l8.2 17.6 19.3 2.3-14.3 13.2 3.8 19.1L32 46.6 15 56.2l3.8-19.1L4.5 23.9l19.3-2.3z"/></svg><strong>COLE AQUI</strong><small>A melhor foto de vocês dois</small></div>
+            <button class="edit-hit" type="button">Colar foto<span class="small">A figurinha rara</span></button>
+          </div></div>
+          <button class="rm" type="button" aria-label="Remover foto">×</button>
+        </figure>
+        <div class="rare-foot">
+          <span class="nm">KANO &amp; GUSTAVO</span>
+          <span class="meta"><span>Nº 05 · ★★★★★</span><span data-edit="since">Desde a escola</span></span>
+        </div>
+        <div class="holo" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="page gallery" id="nossas">
+  <div class="wrap">
+    <div class="gallery-head">
+      <p class="eyebrow">Páginas 6 a 9 · Nossas figurinhas</p>
+      <h2>O resto da coleção é nosso.</h2>
+      <p>Da época do uniforme até hoje. Cada espaço é uma história que só a gente sabe contar inteira.</p>
+    </div>
+    <div class="board">
+      <figure class="slot g1" data-slot="g1" data-tilt="-4">
+        <div class="inner"><div class="frame">
+          <img alt="">
+          <div class="empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="16" width="52" height="38" rx="6"/><path d="M22 16l4-7h12l4 7"/><circle cx="32" cy="35" r="10"/></svg><strong>COLE AQUI</strong></div>
+          <div class="gloss"></div>
+          <button class="edit-hit" type="button">Colar foto</button>
+        </div><figcaption><span class="no">Nº 06</span></figcaption></div>
+        <button class="rm" type="button" aria-label="Remover foto">×</button>
+      </figure>
+      <figure class="slot g2" data-slot="g2" data-tilt="3">
+        <div class="inner"><div class="frame">
+          <img alt="">
+          <div class="empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="16" width="52" height="38" rx="6"/><path d="M22 16l4-7h12l4 7"/><circle cx="32" cy="35" r="10"/></svg><strong>COLE AQUI</strong></div>
+          <div class="gloss"></div>
+          <button class="edit-hit" type="button">Colar foto</button>
+        </div><figcaption><span class="no">Nº 07</span></figcaption></div>
+        <button class="rm" type="button" aria-label="Remover foto">×</button>
+      </figure>
+      <figure class="slot g3" data-slot="g3" data-tilt="5">
+        <div class="inner"><div class="frame">
+          <img alt="">
+          <div class="empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="16" width="52" height="38" rx="6"/><path d="M22 16l4-7h12l4 7"/><circle cx="32" cy="35" r="10"/></svg><strong>COLE AQUI</strong></div>
+          <div class="gloss"></div>
+          <button class="edit-hit" type="button">Colar foto</button>
+        </div><figcaption><span class="no">Nº 08</span></figcaption></div>
+        <button class="rm" type="button" aria-label="Remover foto">×</button>
+      </figure>
+      <figure class="slot g4" data-slot="g4" data-tilt="-3">
+        <div class="inner"><div class="frame">
+          <img alt="">
+          <div class="empty"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="16" width="52" height="38" rx="6"/><path d="M22 16l4-7h12l4 7"/><circle cx="32" cy="35" r="10"/></svg><strong>COLE AQUI</strong></div>
+          <div class="gloss"></div>
+          <button class="edit-hit" type="button">Colar foto</button>
+        </div><figcaption><span class="no">Nº 09</span></figcaption></div>
+        <button class="rm" type="button" aria-label="Remover foto">×</button>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CARTA -->
+<section class="page letter-sec" id="carta">
+  <div class="wrap">
+    <article class="letter">
+      <span class="tape" aria-hidden="true"></span>
+      <p class="greet">Kano,</p>
+      <p class="body" data-edit="letter">Feliz aniversário, irmão.
+
+A gente se conhece desde a época em que o maior problema do dia era a prova de matemática. Muita coisa mudou desde então, a gente mudou, mas uma coisa continua igual: você é a pessoa que eu sei que posso chamar a qualquer hora.
+
+Obrigado pelas risadas, pelos conselhos que eu fingi não ouvir e depois segui, e por nunca deixar a distância ou a correria virar desculpa.
+
+Que esse novo ano venha com saúde, conquistas e muita história nova pra gente contar. Pode contar comigo, como sempre.</p>
+      <p class="sign" data-edit="sign">Seu irmão, Gustavo</p>
+    </article>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="finale" id="final">
+  <div class="wrap">
+    <p class="eyebrow">Última página</p>
+    <div class="cake" id="cake" aria-hidden="true">
+      <div class="candles">
+        <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+        <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+        <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+      </div>
+      <div class="tier t2"></div>
+      <div class="tier t1"></div>
+    </div>
+    <h2 id="finalTitle">Faz um pedido.</h2>
+    <p>Fecha o olho, pensa bem e assopra. O álbum tá completo, agora é só comemorar.</p>
+    <button class="blow" id="blow" type="button">Soprar as velinhas</button>
+    <p class="wish" id="wish" aria-live="polite"></p>
+  </div>
+</section>
+<footer class="foot">
+  <div class="wrap"><span>Álbum do Kano · Edição 2026</span><span id="footCount">0 de 13 figurinhas</span></div>
+</footer>
+</div>
+
+<div class="editbar" id="editbar" hidden>
+  <button class="btn-edit" id="btnEdit" type="button">Editar álbum</button>
+  <span class="hint" id="editHint" hidden>Clique numa figurinha para colar uma foto</span>
+  <button class="btn-cancel" id="btnCancel" type="button" hidden>Cancelar</button>
+  <button class="btn-save" id="btnSave" type="button" hidden disabled>Salvar</button>
+</div>
+<input type="file" id="filePick" accept="image/*" hidden>
+<div class="toast" id="toast" role="status"></div>
+
+<script>window.__ALBUM_STATE__={"v":1,"photos":{"rare":1,"g1":1,"g2":1,"d1a":1,"d1b":1,"d2a":1,"d2b":1,"d3a":1,"d3b":1,"d4a":2,"d4b":2,"g3":1,"g4":1},"text":{}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.3/confetti.browser.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var $ = function(s,r){return (r||document).querySelector(s)};
+  var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var COLORS = ["#FFC93C","#FF5B3A","#17B26A","#5B8CFF","#FFFFFF"];
+  var slots = $$(".slot[data-slot]");
+  var TOTAL = slots.length;
+
+  /* ---------------- estado salvo ---------------- */
+  var state = {v:1, photos:{}, text:{}};
+  var defaults = {};
+  $$("[data-edit]").forEach(function(el){ defaults[el.dataset.edit] = el.textContent; });
+
+  function slotEl(id){ return $('.slot[data-slot="'+id+'"]'); }
+  function setPhoto(id, src){
+    var s = slotEl(id); if(!s) return;
+    var img = $("img", s);
+    if(src){ img.src = src; s.classList.add("filled"); }
+    else { img.removeAttribute("src"); s.classList.remove("filled"); }
+  }
+  function applyState(){
+    slots.forEach(function(s){
+      var id = s.dataset.slot, v = state.photos[id];
+      setPhoto(id, v ? "photos/"+id+".jpg?v="+v : null);
+    });
+    $$("[data-edit]").forEach(function(el){
+      var k = el.dataset.edit;
+      el.textContent = (state.text[k] != null) ? state.text[k] : defaults[k];
+    });
+    updateCount();
+  }
+  function updateCount(){
+    var n = $$(".slot.filled").length;
+    $("#progFill").style.width = (n/TOTAL*100)+"%";
+    $("#progLabel").textContent = n+" de "+TOTAL+" figurinhas coladas";
+    $("#footCount").textContent = n+" de "+TOTAL+" figurinhas";
+  }
+  updateCount();
+  fetch("data/state.json",{cache:"no-store"}).then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(j){ if(j && typeof j==="object"){ state = {v:1, photos:j.photos||{}, text:j.text||{}}; applyState(); if(window.ScrollTrigger) ScrollTrigger.refresh(); } })
+    .catch(function(){
+      // aberto direto do computador (sem servidor): usa o estado embutido
+      var j = window.__ALBUM_STATE__; if(j){ state = {v:1, photos:j.photos||{}, text:j.text||{}}; applyState(); }
+    });
+
+  /* ---------------- toast ---------------- */
+  var toastT;
+  function toast(msg){ var t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(function(){t.classList.remove("show")},3200); }
+
+  /* ---------------- scroll suave + animações ---------------- */
+  var lenis = null;
+  var hasGsap = !!(window.gsap && window.ScrollTrigger);
+  if(hasGsap) gsap.registerPlugin(ScrollTrigger);
+
+  if(!reduce && window.Lenis){
+    try{
+      lenis = new Lenis({lerp:0.09, smoothWheel:true});
+      if(hasGsap){
+        lenis.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add(function(t){ lenis.raf(t*1000); });
+        gsap.ticker.lagSmoothing(0);
+      } else {
+        (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(performance.now());
+      }
+    }catch(e){ lenis = null; }
+  }
+  function goTo(sel){
+    var el = $(sel); if(!el) return;
+    if(lenis) lenis.scrollTo(el,{offset:-10,duration:1.4}); else el.scrollIntoView({behavior: reduce?"auto":"smooth"});
+  }
+  $("#openAlbum").addEventListener("click", function(){ goTo("#album"); });
+
+  function burst(opts){
+    if(!window.confetti || reduce) return;
+    confetti(Object.assign({particleCount:90, spread:75, startVelocity:42, colors:COLORS, scalar:1.05, disableForReducedMotion:true}, opts||{}));
+  }
+
+  if(hasGsap && !reduce){
+    // abertura da capa
+    var tl = gsap.timeline({defaults:{ease:"power3.out"}});
+    tl.from(".hero-top", {y:-20, duration:.6})
+      .from(".hero h1 .l1", {y:40, duration:.7}, "-=.3")
+      .from(".hero h1 .ch", {yPercent:-120, rotation:function(i){return [-18,12,-10,16][i]}, duration:1, ease:"back.out(2.2)", stagger:.09}, "-=.45")
+      .from(".hero-sub, .hero-cta", {y:24, duration:.6, stagger:.1}, "-=.6")
+      .from(".floater", {scale:0, rotation:"+=40", duration:.7, ease:"back.out(2)", stagger:.07}, "-=.9")
+      .add(function(){ burst({origin:{x:.25,y:.45}, angle:60}); burst({origin:{x:.75,y:.45}, angle:120}); }, "-=.5");
+
+    // figurinhas flutuando
+    $$(".floater").forEach(function(f,i){
+      gsap.to(f, {y:(i%2?14:-14), rotation:(i%2?"+=6":"-=6"), duration:2.4+i*.3, ease:"sine.inOut", yoyo:true, repeat:-1, delay:1.4});
+    });
+    // letras pulam ao passar o mouse
+    $$(".hero h1 .ch").forEach(function(c){
+      c.addEventListener("pointerenter", function(){ gsap.fromTo(c,{y:0},{y:-24, duration:.22, yoyo:true, repeat:1, ease:"power2.out"}); });
+    });
+    // capa recua ao rolar
+    gsap.to(".hero-body", {yPercent:18, ease:"none", scrollTrigger:{trigger:".hero", start:"top top", end:"bottom top", scrub:true}});
+
+    // faixa: velocidade de rolagem inclina o texto
+    var skewTo = gsap.quickTo(".ribbon-track","skewX",{duration:.4, ease:"power3"});
+    ScrollTrigger.create({onUpdate:function(self){ skewTo(gsap.utils.clamp(-14,14,self.getVelocity()/-180)); }});
+
+    // duplas: figurinhas giram e flutuam com o scroll (sempre visíveis)
+    $$(".duo").forEach(function(sec){
+      var main = $(".main",sec), mini = $(".mini",sec), num = $(".duo-num",sec);
+      var tm = +main.dataset.tilt, tn = +mini.dataset.tilt;
+      gsap.set(main,{rotation:tm}); gsap.set(mini,{rotation:tn});
+      var st = {trigger:sec, start:"top bottom", end:"bottom top", scrub:1};
+      gsap.fromTo(main, {y:90, rotation:tm-10}, {y:-50, rotation:tm+2, ease:"none", scrollTrigger:st});
+      gsap.fromTo(mini, {y:-40, x:sec.classList.contains("flip")?-30:30, rotation:tn+16}, {y:70, x:0, rotation:tn-4, ease:"none", scrollTrigger:st});
+      gsap.fromTo(num, {yPercent:-30}, {yPercent:30, ease:"none", scrollTrigger:st});
+      gsap.fromTo($("h2",sec), {x:sec.classList.contains("flip")?-40:40}, {x:0, ease:"none", scrollTrigger:{trigger:sec, start:"top bottom", end:"center center", scrub:1}});
+    });
+
+    // figurinha rara vira ao entrar
+    gsap.fromTo(".card-stage", {rotationY:-38, rotationX:12, scale:.86, transformPerspective:1100}, {rotationY:0, rotationX:0, scale:1, ease:"none", scrollTrigger:{trigger:".rare", start:"top bottom", end:"center center", scrub:1}});
+    ScrollTrigger.create({trigger:".rare", start:"top 45%", once:true, onEnter:function(){
+      var r = $("#rareCard").getBoundingClientRect();
+      burst({particleCount:60, spread:100, shapes:["star"], origin:{x:(r.left+r.width/2)/innerWidth, y:(r.top+r.height/2)/innerHeight}});
+    }});
+
+    // galeria espalha as fotos
+    $$(".board .slot").forEach(function(s,i){
+      var t = +s.dataset.tilt;
+      gsap.fromTo(s, {y:70+(i%3)*30, rotation:t+(i%2?14:-14)}, {y:0, rotation:t, ease:"none", scrollTrigger:{trigger:s, start:"top bottom", end:"top 45%", scrub:1}});
+    });
+
+    // carta assenta
+    gsap.fromTo(".letter", {rotation:-6, y:60}, {rotation:-1, y:0, ease:"none", scrollTrigger:{trigger:".letter", start:"top bottom", end:"top 35%", scrub:1}});
+    // bolo
+    gsap.fromTo(".cake", {scale:.7, rotation:-6}, {scale:1, rotation:0, ease:"none", scrollTrigger:{trigger:".finale", start:"top bottom", end:"top 30%", scrub:1}});
+  } else {
+    $$(".slot[data-tilt]").forEach(function(s){ s.style.rotate = s.dataset.tilt+"deg"; });
+  }
+
+  /* ---------------- figurinha holográfica ---------------- */
+  (function(){
+    var card = $("#rareCard"), stage = $(".card-stage");
+    if(!card || reduce) return;
+    function move(e){
+      var r = card.getBoundingClientRect();
+      var px = Math.min(Math.max((e.clientX-r.left)/r.width,0),1), py = Math.min(Math.max((e.clientY-r.top)/r.height,0),1);
+      card.style.setProperty("--ry", ((px-.5)*22).toFixed(2)+"deg");
+      card.style.setProperty("--rx", ((.5-py)*22).toFixed(2)+"deg");
+      card.style.setProperty("--mx", (px*100).toFixed(1)+"%");
+      card.style.setProperty("--my", (py*100).toFixed(1)+"%");
+    }
+    stage.addEventListener("pointermove", move);
+    stage.addEventListener("pointerleave", function(){ ["--rx","--ry"].forEach(function(p){card.style.setProperty(p,"0deg")}); card.style.setProperty("--mx","50%"); card.style.setProperty("--my","50%"); });
+    // no celular, o brilho passeia sozinho
+    if(window.matchMedia("(hover: none)").matches && window.gsap){
+      var o = {p:0};
+      gsap.to(o,{p:1, duration:5, repeat:-1, yoyo:true, ease:"sine.inOut", onUpdate:function(){
+        card.style.setProperty("--mx",(o.p*100)+"%"); card.style.setProperty("--ry",((o.p-.5)*14)+"deg");
+      }});
+    }
+  })();
+
+  /* ---------------- velinhas ---------------- */
+  var blown = false;
+  $("#blow").addEventListener("click", function(){
+    var cake = $("#cake");
+    if(!blown){
+      blown = true;
+      cake.classList.add("blown");
+      $("#finalTitle").textContent = "Parabéns, Kano!";
+      $("#wish").textContent = "Pedido feito. Agora é com o universo.";
+      this.textContent = "Acender de novo";
+      if(window.gsap && !reduce) gsap.fromTo("#finalTitle",{scale:.6},{scale:1, duration:.8, ease:"elastic.out(1,.45)"});
+      if(window.confetti && !reduce){
+        var end = Date.now()+1600;
+        (function frame(){
+          confetti({particleCount:4, angle:60, spread:60, origin:{x:0, y:.75}, colors:COLORS});
+          confetti({particleCount:4, angle:120, spread:60, origin:{x:1, y:.75}, colors:COLORS});
+          if(Date.now()<end) requestAnimationFrame(frame);
+        })();
+        setTimeout(function(){ burst({particleCount:160, spread:120, startVelocity:50, origin:{y:.55}}); }, 500);
+      }
+    } else {
+      blown = false;
+      cake.classList.remove("blown");
+      $("#finalTitle").textContent = "Faz um pedido.";
+      $("#wish").textContent = "";
+      this.textContent = "Soprar as velinhas";
+    }
+  });
+
+  /* ---------------- modo edição (só para quem pode editar) ---------------- */
+  var art = null, editing = false, pendingPhotos = {}, pendingText = {}, objUrls = [], targetSlot = null, saving = false;
+
+  function pendingCount(){ return Object.keys(pendingPhotos).length + Object.keys(pendingText).length; }
+  function refreshBar(){
+    var n = pendingCount(), b = $("#btnSave");
+    b.disabled = n===0 || saving;
+    b.textContent = saving ? "Salvando…" : (n ? "Salvar ("+n+")" : "Salvar");
+  }
+  function setEditing(on){
+    editing = on;
+    document.body.classList.toggle("editing", on);
+    $("#btnEdit").hidden = on; $("#btnCancel").hidden = !on; $("#btnSave").hidden = !on; $("#editHint").hidden = !on;
+    $$("[data-edit]").forEach(function(el){
+      if(on){ try{ el.contentEditable = "plaintext-only"; }catch(e){} if(el.contentEditable!=="plaintext-only") el.contentEditable = "true"; }
+      else el.removeAttribute("contenteditable");
+    });
+    refreshBar();
+  }
+  function discard(){
+    pendingPhotos = {}; pendingText = {};
+    objUrls.forEach(function(u){ URL.revokeObjectURL(u); }); objUrls = [];
+    $$(".slot.pending").forEach(function(s){ s.classList.remove("pending"); });
+    applyState();
+  }
+  function readOnly(){
+    setEditing(false); $("#editbar").hidden = true;
+    toast("Este álbum está em modo leitura aqui. Para editar, abra pela sua conta.");
+  }
+
+  function compress(file){
+    return new Promise(function(res, rej){
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function(){
+        var max = 1400, w = img.naturalWidth, h = img.naturalHeight, k = Math.min(1, max/Math.max(w,h));
+        var c = document.createElement("canvas"); c.width = Math.round(w*k); c.height = Math.round(h*k);
+        var g = c.getContext("2d"); g.fillStyle="#fff"; g.fillRect(0,0,c.width,c.height); g.drawImage(img,0,0,c.width,c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function(b){ b ? res(b) : rej(new Error("blob")); }, "image/jpeg", .84);
+      };
+      img.onerror = function(){ URL.revokeObjectURL(url); rej(new Error("img")); };
+      img.src = url;
+    });
+  }
+
+  slots.forEach(function(s){
+    $(".edit-hit", s).addEventListener("click", function(){ if(!editing) return; targetSlot = s.dataset.slot; $("#filePick").value=""; $("#filePick").click(); });
+    $(".rm", s).addEventListener("click", function(){
+      if(!editing) return;
+      var id = s.dataset.slot;
+      if(state.photos[id]) pendingPhotos[id] = null; else delete pendingPhotos[id];
+      setPhoto(id, null); s.classList.toggle("pending", id in pendingPhotos); updateCount(); refreshBar();
+    });
+  });
+  $("#filePick").addEventListener("change", function(){
+    var f = this.files && this.files[0], id = targetSlot; if(!f || !id) return;
+    if(!/^image\//.test(f.type)){ toast("Esse arquivo não é uma imagem. Tente um JPG ou PNG."); return; }
+    compress(f).then(function(blob){
+      pendingPhotos[id] = blob;
+      var u = URL.createObjectURL(blob); objUrls.push(u);
+      setPhoto(id, u); slotEl(id).classList.add("pending"); updateCount(); refreshBar();
+      if(window.gsap && !reduce) gsap.fromTo($(".inner",slotEl(id)),{scale:.85, rotation:-6},{scale:1, rotation:0, duration:.7, ease:"elastic.out(1,.5)"});
+    }).catch(function(){ toast("Não consegui ler essa imagem. Tente outro arquivo."); });
+  });
+  $$("[data-edit]").forEach(function(el){
+    el.addEventListener("input", function(){
+      if(!editing) return;
+      var k = el.dataset.edit, v = el.innerText.replace(/ /g," ").trim();
+      var saved = state.text[k] != null ? state.text[k] : defaults[k];
+      if(v === saved.trim()) delete pendingText[k]; else pendingText[k] = v;
+      refreshBar();
+    });
+    el.addEventListener("paste", function(e){
+      if(!editing) return; e.preventDefault();
+      var t = (e.clipboardData||window.clipboardData).getData("text/plain");
+      document.execCommand("insertText", false, t);
+    });
+  });
+
+  $("#btnEdit").addEventListener("click", function(){ setEditing(true); });
+  $("#btnCancel").addEventListener("click", function(){ discard(); setEditing(false); });
+  $("#btnSave").addEventListener("click", function(){
+    if(!art || saving || !pendingCount()) return;
+    saving = true; refreshBar();
+    var next = {v:1, photos:Object.assign({}, state.photos), text:Object.assign({}, state.text)};
+    var files = {};
+    Object.keys(pendingPhotos).forEach(function(id){
+      var b = pendingPhotos[id];
+      if(b){ files["photos/"+id+".jpg"] = b; next.photos[id] = (state.photos[id]||0)+1; }
+      else { files["photos/"+id+".jpg"] = {delete:true}; delete next.photos[id]; }
+    });
+    Object.keys(pendingText).forEach(function(k){ next.text[k] = pendingText[k]; });
+    files["data/state.json"] = {content: JSON.stringify(next), contentType:"application/json"};
+    art.publish(files).then(function(){
+      state = next; pendingPhotos = {}; pendingText = {};
+      $$(".slot.pending").forEach(function(s){ s.classList.remove("pending"); });
+      saving = false; setEditing(false); toast("Álbum salvo. Quem abrir agora já vê as fotos novas.");
+      burst({particleCount:70, origin:{y:.9}});
+    }).catch(function(err){
+      saving = false; refreshBar();
+      var c = err && err.code;
+      if(c==="conflict") toast("Outra versão foi salva antes. Recarregando o álbum.");
+      else if(c==="not_writer"||c==="not_granted"||c==="consent_required"||c==="not_declared") readOnly();
+      else if(c==="capability_disabled"||c==="capability_removed") toast("Salvar não está disponível nesta visualização. Se o álbum estiver com link público, edite antes de compartilhar.");
+      else if(c==="too_large") toast("Fotos grandes demais para salvar de uma vez. Salve em partes menores.");
+      else if(c==="rate_limited") toast("Muitas gravações seguidas. Espere um pouco e salve de novo.");
+      else toast("Não foi possível salvar agora. Tente de novo em instantes.");
+    });
+  });
+
+  if(window.claude && typeof window.claude.use === "function"){
+    Promise.all([claude.use("artifact"), claude.use("user")]).then(function(r){
+      art = r[0]; var user = r[1];
+      if(!art || !user) return;
+      return user.canEdit().then(function(ok){ if(ok) $("#editbar").hidden = false; });
+    }).catch(function(){});
+  }
+})();
+</script>
+
+</body></html>
